@@ -43,13 +43,13 @@ h1, h2, h3, h4, h5, h6 {
 /* ---My styles--- */
 
 :root {
-  --header-bg-color: #fff;
-  --header-color: #000;
+  --header-bg-color: #FFF;
   --sidebar-bg-color: #1992D4;
-  --sidebar-color: #fff;
+  --sidebar-color: #FFF;
   --bg-color: #E2E8F0;
-  --header-color: #000;
-  --paragraph-color: #636363;
+  --h-color:  #000;
+  --p-color: #636363;
+  --project-bg-color: #FFF;
   --project-border-color: #F0B429;
 }
 
@@ -60,7 +60,7 @@ body {
               "sidebar header" 5rem
               "sidebar main" calc(100vh - 5rem)
               / 15vw 85vw;
-  
+  background-color: var(--bg-color);
 }
 
 ul, ol {
@@ -70,18 +70,56 @@ ul, ol {
 
 /* Header */
 
-header {
+header.site-header {
   grid-area: header;
   display: grid;
   grid-template-columns: 3fr 1fr; 
+  background-color: var(--header-bg-color);
 }
+
+/* Sidebar */
 
 .sidebar {
   grid-area: sidebar;
   display: grid;
   grid-template-rows: min(5rem, 1fr) 6fr 3fr;
+  background-color: var(--sidebar-bg-color);
 }
+
+/* Main */
 
 main {
   grid-area: main ;
+  color: var(--p-color);
+
+  & :is(h1, h2, h3, h4, h5, h6) {
+      color: var(--h-color);
+    }
+}
+
+main {
+  & > header {
+    background-color: var(--header-bg-color);
+    color: var(--h-color);
+  }
+}
+
+.main-header-home {
+  & button {
+    background-color: var(--sidebar-bg-color);
+  }
+}
+
+.projects,
+.announcements,
+.trending {
+  & > :is(section, ul, ol) {
+    background-color: var(--project-bg-color);
+  }
+}
+
+.projects {
+  & > section {
+    border-left-color: var(--project-border-color);
+  }
 }
