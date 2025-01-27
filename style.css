@@ -40,4 +40,30 @@ h1, h2, h3, h4, h5, h6 {
   isolation: isolate;
 }
 
-/* My styles */
+/* ---My styles--- */
+
+:root {
+  --header-bg-color: #fff;
+  --header-color: #000;
+  --sidebar-bg-color: #1992D4;
+  --sidebar-color: #fff;
+  --main-bg-color: #E2E8F0;
+  --main-header-color: #000;
+  --main-paragraph-color: #636363;
+  --project-border-color: #F0B429;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  grid-template: "sidebar header" 5rem
+                 "sidebar main" calc(100vh - 5rem)
+                 / 15vw 85vw;
+}
+
+ul, ol {
+  padding: 0;
+  list-style-type: none;
+}
+
+/* Header */
