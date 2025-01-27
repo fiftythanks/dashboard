@@ -67,3 +67,15 @@ ul, ol {
 }
 
 /* Header */
+
+header {
+  grid-area: header;
+}
+
+.sidebar {
+  grid-area: sidebar;
+}
+
+main {
+  grid-area: main ;
+}
