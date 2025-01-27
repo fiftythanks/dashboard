@@ -78,7 +78,7 @@ header {
 .sidebar {
   grid-area: sidebar;
   display: grid;
-  
+  grid-template-rows: min(5rem, 1fr) 6fr 3fr;
 }
 
 main {
