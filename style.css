@@ -56,9 +56,10 @@ h1, h2, h3, h4, h5, h6 {
 body {
   height: 100vh;
   display: grid;
-  grid-template: "sidebar header" 5rem
-                 "sidebar main" calc(100vh - 5rem)
-                 / 15vw 85vw;
+  grid-template: 
+              "sidebar header" 5rem
+              "sidebar main" calc(100vh - 5rem)
+              / 15vw 85vw;
 }
 
 ul, ol {
@@ -70,6 +71,7 @@ ul, ol {
 
 header {
   grid-area: header;
+  display: grid;
 }
 
 .sidebar {
