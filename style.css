@@ -54,18 +54,23 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  height: 100vh;
   display: grid;
-  grid-template: 
-              "sidebar header" 5rem
-              "sidebar main" calc(100vh - 5rem)
-              / 15vw 85vw;
+  grid-template-areas: 
+              "sidebar header"
+              "sidebar main";
+  grid-template-rows: 2.5rem 1fr;
+  grid-template-columns: 270px 1fr;
   background-color: var(--bg-color);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;  
 }
 
 ul, ol {
   padding: 0;
   list-style-type: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 /* Header */
@@ -75,6 +80,7 @@ header.site-header {
   display: grid;
   grid-template-columns: 3fr 1fr; 
   background-color: var(--header-bg-color);
+  padding: 0.8rem;
 }
 
 /* Sidebar */
@@ -82,8 +88,46 @@ header.site-header {
 .sidebar {
   grid-area: sidebar;
   display: grid;
-  grid-template-rows: min(5rem, 1fr) 6fr 3fr;
+  grid-template-rows: 2.5rem 12em 6em;
+  gap: 2em;
+  align-items: start;   
   background-color: var(--sidebar-bg-color);
+  color: var(--sidebar-color);  
+  & a {
+    color: var(--sidebar-color);  
+  }
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 1rem;  
+}
+
+.logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: baseline;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+
+}
+
+.logo {
+  width: 2.5rem;
+}
+
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  & img {
+    width: 16px;
+  }
+  padding-left: 0.5rem;
+}
+
+.sidebar li {
+  height: 2em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 /* Main */
