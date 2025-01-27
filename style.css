@@ -77,6 +77,8 @@ header {
 
 .sidebar {
   grid-area: sidebar;
+  display: grid;
+  
 }
 
 main {
