@@ -76,6 +76,7 @@ a {
 /* Header */
 
 .site-header {
+  z-index: 2;
   grid-area: header;
   display: grid;
   grid-template-columns: 5fr 2fr;
@@ -84,26 +85,26 @@ a {
   background-color: var(--header-bg-color);
   padding: 0.8rem 2rem;
 
-  & ul {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
 
   & > ul {
     gap: 1.2rem;
   }
 
-  & button {
-      border: none;
-      cursor: pointer;
-      appearance: none;
-      background-color: inherit;
-      padding-top: 8px; 
+  button {
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    padding-top: 8px; 
 
-      & img {
-        width: 1.5rem;
-      }
+    img {
+      width: 1.5rem;
+    }
   }
   .profile-pic {
     width: 2.5rem;
@@ -117,7 +118,7 @@ a {
 }
 
 .search {
-  & input {
+  input {
     border: none;
     border-radius: 20px;
     background-color: var(--bg-color);
@@ -137,6 +138,7 @@ a {
 /* Sidebar */
 
 .sidebar {
+  z-index: 1;
   grid-area: sidebar;
   display: grid;
   grid-template-rows: 2.5rem 12em 6em;
@@ -144,7 +146,7 @@ a {
   align-items: start;   
   background-color: var(--sidebar-bg-color);
   color: var(--sidebar-color);  
-  & a {
+  a {
     color: var(--sidebar-color);  
   }
   font-size: 1.1rem;
@@ -168,7 +170,7 @@ a {
 .sidebar nav {
   display: flex;
   flex-direction: column;
-  & img {
+  img {
     width: 1.1rem;
   }
   padding-left: 0.5rem;
@@ -184,6 +186,54 @@ a {
 /* Main */
 
 main {
+  z-index: 0;
+}
+
+/* Content header */
+
+.content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4.5rem 1rem 2.6rem;
+  box-shadow: var(--p-color) 0 0 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+
+  button {
+    background-color: var(--sidebar-bg-color);
+    color: #FFF;
+    border: none;
+    border-radius: 30px;
+    padding: 0.5rem 0;
+    width: 6rem;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    &:first-child {
+      gap: 1rem;
+    }
+    &:last-child {
+      gap: 1.8rem;
+    }
+  }
+
+  .username {
+    font-size: 1.4rem;
+  }
+}
+
+.profile-pic {
+  width: 4rem;
+  border-radius: 3.5rem;
+}
+
+main {
   grid-area: main ;
   color: var(--p-color);
 
@@ -196,12 +246,6 @@ main {
   & > header {
     background-color: var(--header-bg-color);
     color: var(--h-color);
-  }
-}
-
-.main-header-home {
-  & button {
-    background-color: var(--sidebar-bg-color);
   }
 }
 
