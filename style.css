@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
   --p-color: #636363;
   --project-bg-color: #FFF;
   --project-border-color: #F0B429;
-  --shadow-color: rgb(99 99 99 / 20%)
+  --shadow-color: rgb(99 99 99 / 20%);
 }
 
 body {
@@ -265,6 +265,7 @@ main .content {
 .trending {
   background-color: var(--project-bg-color);
   border-radius: 10px;
+  box-shadow: var(--shadow-color) 2px 2px 2px;
 }
 
 .projects {
@@ -279,7 +280,9 @@ main .content {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    box-shadow: var(--shadow-color) 2px 2px 2px;
+    .project-text-wrapper:hover {
+      cursor: pointer;
+    }
 
     .buttons {
       align-self: flex-end;
@@ -305,14 +308,48 @@ main .content {
   }
 }
 
+.announcements-block {
+  margin: 0 0 2rem;
+}
+
 .announcements {
+  padding: 2rem; 
   font-size: 0.8rem;
   h2 {
     font-size: 0.9rem;
   }
+  li {
+    &:not(:last-child) {
+      border-bottom: 1px solid rgb(99 99 99 / 40%);
+    }
+    padding: 1rem 0;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      padding-bottom: 0;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }
 
 .trending {
+  padding: 1.5rem;
+  li {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .avatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 2.5rem;
+  }
   .username {
     color: #000;
   }
